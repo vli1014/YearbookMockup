@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Name 1</title>
+	<link rel="stylesheet" href="yb.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="yb.js"></script>
+</head>
+<body onload="initialize();">
+	<div class="topbar">
+		<button id="sideMenuToggle" onclick="toggleSideMenu()">&#9776;</button>
+		<a href="index.html"> <button class="material-icons" style="float: left; margin-left: 10px; margin-top: 10px; z-index: 2; background-color: #A5ADAC; border: none; font-size: 24pt; outline: none;">keyboard_arrow_left</button></a>
+		<button id="signcancel" onclick="allowSign();">Sign</button>
+		<span class="personal-icon">O</span>
+	</div>
+
+	<div class="side-menu" id="sideMenu">
+		<a href="name1.html">Name1</a>
+		<a href="name2.html">Name2</a>
+		<a href="name3.html">Name3</a>
+	</div>
+
+	<div>
+		<input type="range" min="0" max="6" range="3" id="pageIndicator" name="pageIndicator">
+		<!--<p id="pagenumber">Page: </p>-->
+		<button id="bottomMenuToggle" onclick="toggleBottomMenu();">&#9776;</button>
+	</div>
+		
+	<div class="bottom-menu" id="bottomMenu">
+		<div style="background-color: #E0E0E0;">
+			<button class="material-icons">attach_file</button>
+			<button class="material-icons">format_bold</button>
+			<button class="material-icons">format_italic</button>
+			<button class="material-icons">format_underline</button>
+			<button class="material-icons">format_align_left</button>
+			<label for="fontstyle"></label><select name="fontstyle" id="fonstyle">
+				<option>Select Font..</option>
+				<option value="Arial">Arial</option>
+				<option value="Calibri">Calibri</option>
+				<option value="tnr">Times New Roman</option>
+				<option value="Courier">Courier</option>
+				<option value="comicsans">Comic Sans</option>
+				<option value="Roboto">Roboto</option>
+			</select>
+			<label for="fontsize" id="fontsize"></label><select name="fontsize" id="fontsize">
+				<option value="10">10</option>
+				<option value="12">12</option>
+				<option value="14">14</option>
+				<option value="16">16</option>
+				<option value="18">18</option>
+				<option value="20">20</option>
+			</select>
+			<button class="material-icons">format_color_text</button>
+			<button class="material-icons">undo</button>
+			<button class="material-icons">redo</button>
+			<button>Submit</button>
+		</div>
+	</div>
+
+	<div class="material-icons" id="prevpage">keyboard_arrow_left</div>
+
+	<div class="left">
+		<p style="font-size: 10pt;"> 10pt	Hola O:</p> <br>
+		<p style="font-size: 12pt;"> 12pt	Hola O:</p> <br>
+		<p style="font-size: 14pt;"> 14pt	Hola O:</p> <br>
+		<p style="font-size: 16pt;"> 16pt	Hola O:</p> <br>
+		<p style="font-size: 18pt;"> 18pt	Hola O:</p> <br>
+		<p style="font-size: 20pt;"> 20pt	Hola O:</p> <br>
+	</div>
+
+	<div class="right">
+		<p style="font-size: 10pt;"> 10pt	Hola O:</p> <br>
+		<p style="font-size: 12pt;"> 12pt	Hola O:</p> <br>
+		<p style="font-size: 14pt;"> 14pt	Hola O:</p> <br>
+		<p style="font-size: 16pt;"> 16pt	Hola O:</p> <br>
+		<p style="font-size: 18pt;"> 18pt	Hola O:</p> <br>
+		<p style="font-size: 20pt;"> 20pt	Hola O:</p> <br>
+	</div>
+
+	<div class="material-icons" id="nextpage">keyboard_arrow_right</div>
+</body>
+</html>
