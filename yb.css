@@ -1,12 +1,11 @@
 body {
 	text-align: center;
-	background-color: #A5ADAC;
+	background-color: #464646;
 }
 .left, .right {
 	background-color: white;
 	top: 10px;
-	margin: 0 auto;
-	margin: 0px 10px;
+	margin: 0px 2px;
 	width: 30.77vw;
 	height: 82vh;
 	border: 1px solid black;
@@ -36,6 +35,7 @@ body {
 	text-align: right;
 	padding: 0px 10px 10px 15px;
 	z-index: 1;
+	background-color: #606060;
 }
 .topbar span {
 	margin-right: 15px;
