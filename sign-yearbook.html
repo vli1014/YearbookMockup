@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yearbook Signing</title>
+		<link rel="stylesheet" href="sign-yearbook.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="sign-yearbook.js"></script>
+	</head>
+	<body onload="initialize()">
+		<!-- Top bar - Page actions -->
+		<div class="topBar">
+			<button id="sideMenuToggle" onclick="toggleSideMenu()">&#9776;</button>
+			<a href="index.html"><button class="material-icons" id="homeButton">keyboard_arrow_left | HOME</button></a>
+			<button id="signButton" onclick="allowSign()">Sign</button>
+			<span class="personal-icon">O</span>
+		</div>
+		
+		<!-- Side menu - Other Yearbooks -->
+		<div class="side-menu" id="sideMenu">
+			<a href="REPLACE">ENTER NAME HERE</a>
+		</div>
+		
+		<!-- Bottom interactables -->
+		<div>
+			<input type="range" min="0" max="6" range="3" id="pageIndicator" name="pageIndicator">
+			<button id="bottomMenuToggle" onclick="toggleBottomMenu()">&#9776;</button>
+		</div>
+		
+		<!-- Bottom menu - Text decorations and more -->
+		<div class="bottom-menu" id="bottomMenu">
+			<div style="background-color: #E0E0E0;">
+				<button class="material-icons">attach_file</button>
+				<button class="material-icons">format_bold</button>
+				<button class="material-icons">format_italic</button>
+				<button class="material-icons">format_underline</button>
+				<button class="material-icons">format_align_left</button>
+				<label for="fontstyle"></label><select name="fontstyle" id="fonstyle">
+					<option>Select Font..</option>
+					<option value="Arial">Arial</option>
+					<option value="Calibri">Calibri</option>
+					<option value="tnr">Times New Roman</option>
+					<option value="Courier">Courier</option>
+					<option value="comicsans">Comic Sans</option>
+					<option value="Roboto">Roboto</option>
+				</select>
+				<label for="fontsize" id="fontsize"></label><select name="fontsize" id="fontsize">
+					<option value="10">10</option>
+					<option value="12">12</option>
+					<option value="14">14</option>
+					<option value="16">16</option>
+					<option value="18">18</option>
+					<option value="30">30</option>
+				</select>
+				<button class="material-icons">format_color_text</button>
+				<button class="material-icons">undo</button>
+				<button class="material-icons">redo</button>
+				<button>Submit</button>
+			</div>
+		</div>
+		
+		<!-- Left page arrow -->
+		<div class="material-icons" id="prevPage">keyboard_arrow_left</div>
+		
+		<!-- Left page -->
+		<div class="leftPage">
+			<p>ENTER IMAGES HERE</p>
+		</div>
+		
+		<!-- Right page -->
+		<div class="rightPage">
+			<p>ENTER IMAGES HERE</p>
+		</div>
+		
+		<div class="material-icons" id="nextPage">keyboard_arrow_right</div>
+	</body>
+</html>
