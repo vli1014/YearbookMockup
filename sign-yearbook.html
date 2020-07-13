@@ -5,14 +5,15 @@
 		<link rel="stylesheet" href="sign-yearbook.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="sign-yearbook.js"></script>
 	</head>
-	<body onload="initialize()">
+	<body>
 		<!-- Top bar - Page actions -->
 		<div class="topBar">
-			<button id="sideMenuButton" onclick="toggleSideMenu()">&#9776;</button>
+			<button id="sideMenuButton">&#9776;</button>
 			<a href="index.html"><button class="material-icons" id="homeButton">keyboard_arrow_left | HOME</button></a>
-			<button id="signButton" onclick="allowSign()">Sign</button>
+			<button id="signButton">Sign</button>
 			<span class="personal-icon">O</span>
 		</div>
 		
@@ -24,7 +25,7 @@
 		<!-- Bottom interactables -->
 		<div>
 			<input type="range" min="0" max="6" range="3" id="pageIndicator" name="pageIndicator">
-			<button id="bottomMenuButton" onclick="toggleBottomMenu()">&#9776;</button>
+			<button id="bottomMenuButton">&#9776;</button>
 		</div>
 		
 		<!-- Bottom menu - Text decorations and more -->

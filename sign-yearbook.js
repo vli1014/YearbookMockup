@@ -1,65 +1,62 @@
 /* Runs on page load. */
-function initialize(){
+$(document).ready(function(){
 	sideMenuToggled = false;
-	signing = false;
+	isSigning = false;
 	bottomMenuToggled = false;
 	
-	sideMenu = document.getElementById("sideMenu");
-	sideMenuToggle = document.getElementById("sideMenuToggle");
-	signButton = document.getElementById("signButton");
-	bottomMenuToggle = document.getElementById("bottomMenuToggle");
-	bottomMenu = document.getElementById("bottomMenu");
-	pageIndicator = document.getElementById("pageIndicator");
-}
-
-
-/* Toggles the side menu. */
-function toggleSideMenu(){
-	sideMenuToggled = !sideMenuToggled;
 	
-	if(sideMenuToggled){
-		sideMenu.style.width = "250px";
-		sideMenuToggle.style.transform = "translateX(250px)";
-		sideMenuToggle.style.fontSize = "40px";
-		sideMenuToggles.innerHTML = "&times";
-	} else{
-		sideMenu.style.width = "0";
-		sideMenuToggle.style.transform = "translateX(0px)";
-		sideMenuToggle.style.fontSize = "32px";
-		sideMenuToggle.innerHTML = "&#9776";
-	}
-}
-
-/* Toggles signing features. */
-function allowSign(){
-	signing = !signing;
-	
-	if(!signing){
-		signButton.innerHTML = "Sign";
-		bottomMenuToggle.style.display = "none";
-		bottomMenu.style.display = "none";
-		pageIndicator.style.bottom = "40px";
-	} else{
-		bottomMenuToggled = false;
-		toggleBottomMenu();
+	/* Toggles the side menu. */
+	$("#sideMenuButton").click(function(){
+		sideMenuToggled = !sideMenuToggled;
 		
-		signButton.innerHTML = "Cancel";
-		bottomMenuToggle.style.display = "inline-block";
-		bottomMenu.style.display = "inline-block";
-	}
-}
-
-/* Toggles the bottom menu. */
-function toggleBottomMenu(){
-	bottomMenuToggled = !bottomMenuToggled;
+		if(sideMenuToggled){
+			$("#sideMenu").css("width", "250px");
+			$("#sideMenuButton")
+				.css({"transform": "translateX(250px)", "fontSize": "40px"})
+				.html("&times;")
+			;
+		} else{
+			$("#sideMenu").css("width", "0px");
+			$("#sideMenuButton")
+				.css({"transform": "translateX(0px)", "fontSize": "32px"})
+				.html("&#9776;")
+			;
+		}
+	});
 	
-	if(bottomMenuToggled){
-		pageIndicator.style.bottom = "104px";
-		bottomMenuToggle.style.bottom = "44px";
-		bottomMenu.style.bottom = "0";
-	} else{
-		pageIndicator.style.bottom = "40px";
-		bottomMenuToggle.style.bottom = "-20px";
-		bottomMenu.style.bottom = "-66px";
-	}
-}
+	
+	/* Toggles signing features. */
+	$("#signButton").click(function(){
+		isSigning = !isSigning;
+			
+		if(!isSigning){
+			$("#signButton").text("Sign");
+			$("#bottomMenuButton").css("display", "none");
+			$("#bottomMenu").css("display", "none");
+			$("#pageIndicator").css("bottom", "40px");
+		} else{
+			bottomMenuToggled = false;
+			$("#bottomMenuButton").trigger("click");
+			
+			$("#signButton").text("Cancel");
+			$("#bottomMenuButton").css("display", "inline-block");
+			$("#bottomMenu").css("display", "inline-block");
+		}
+	});
+	
+	
+	/* Toggles the bottom menu. */
+	$("#bottomMenuButton").click(function(){
+		bottomMenuToggled = !bottomMenuToggled;
+		
+		if(bottomMenuToggled){
+			$("#pageIndicator").css("bottom", "104px");
+			$("#bottomMenuButton").css("bottom", "44px");
+			$("#bottomMenu").css("bottom", "0px");
+		} else{
+			$("#pageIndicator").css("bottom", "44px");
+			$("#bottomMenuButton").css("bottom", "-20px");
+			$("#bottomMenu").css("bottom", "-66px");
+		}
+	});
+});
