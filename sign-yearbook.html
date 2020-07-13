@@ -10,7 +10,7 @@
 	<body onload="initialize()">
 		<!-- Top bar - Page actions -->
 		<div class="topBar">
-			<button id="sideMenuToggle" onclick="toggleSideMenu()">&#9776;</button>
+			<button id="sideMenuButton" onclick="toggleSideMenu()">&#9776;</button>
 			<a href="index.html"><button class="material-icons" id="homeButton">keyboard_arrow_left | HOME</button></a>
 			<button id="signButton" onclick="allowSign()">Sign</button>
 			<span class="personal-icon">O</span>
@@ -24,7 +24,7 @@
 		<!-- Bottom interactables -->
 		<div>
 			<input type="range" min="0" max="6" range="3" id="pageIndicator" name="pageIndicator">
-			<button id="bottomMenuToggle" onclick="toggleBottomMenu()">&#9776;</button>
+			<button id="bottomMenuButton" onclick="toggleBottomMenu()">&#9776;</button>
 		</div>
 		
 		<!-- Bottom menu - Text decorations and more -->
@@ -36,7 +36,7 @@
 				<button class="material-icons">format_underline</button>
 				<button class="material-icons">format_align_left</button>
 				<label for="fontstyle"></label><select name="fontstyle" id="fonstyle">
-					<option>Select Font..</option>
+					<option>Select Font...</option>
 					<option value="Arial">Arial</option>
 					<option value="Calibri">Calibri</option>
 					<option value="tnr">Times New Roman</option>
@@ -63,15 +63,16 @@
 		<div class="material-icons" id="prevPage">keyboard_arrow_left</div>
 		
 		<!-- Left page -->
-		<div class="leftPage">
+		<div id="leftPage">
 			<p>ENTER IMAGES HERE</p>
 		</div>
 		
 		<!-- Right page -->
-		<div class="rightPage">
+		<div id="rightPage">
 			<p>ENTER IMAGES HERE</p>
 		</div>
 		
+		<!-- Right page arrow -->
 		<div class="material-icons" id="nextPage">keyboard_arrow_right</div>
 	</body>
 </html>

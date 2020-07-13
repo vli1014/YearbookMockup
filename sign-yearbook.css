@@ -25,7 +25,7 @@ body{
 	padding: 2px;
 }
 
-#sideMenuToggle{
+#sideMenuButton{
 	margin-top: 20px;
 	text-align: center;
 	padding: 2px 0;
@@ -111,7 +111,7 @@ body{
 	opacity: 1;
 }
 
-#bottomMenuToggle{
+#bottomMenuButton{
 	text-align: center;
 	width: 300px;
 	height: 60px;
@@ -162,7 +162,7 @@ body{
 	cursor: pointer;
 }
 
-.leftPage, .rightPage{
+#leftPage, #rightPage{
 	background-color: white;
 	top: 10px;
 	margin: 0px 2px;
@@ -173,7 +173,7 @@ body{
 	position: relative;
 	padding: 2vw 4vh;
 }
-.leftPage p .rightPage p{
+#leftPage p #rightPage p{
 	display: inline-block;
 }
 
