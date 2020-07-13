@@ -162,7 +162,7 @@ body{
 	cursor: pointer;
 }
 
-#leftPage, #rightPage{
+.page{
 	background-color: white;
 	top: 10px;
 	margin: 0px 2px;
@@ -173,7 +173,7 @@ body{
 	position: relative;
 	padding: 2vw 4vh;
 }
-#leftPage p #rightPage p{
+.page p{
 	display: inline-block;
 }
 

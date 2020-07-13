@@ -3,7 +3,8 @@ $(document).ready(function(){
 	sideMenuToggled = false;
 	isSigning = false;
 	bottomMenuToggled = false;
-	
+	hasTextArea = false;
+
 	
 	/* Toggles the side menu. */
 	$("#sideMenuButton").click(function(){
@@ -13,14 +14,12 @@ $(document).ready(function(){
 			$("#sideMenu").css("width", "250px");
 			$("#sideMenuButton")
 				.css({"transform": "translateX(250px)", "fontSize": "40px"})
-				.html("&times;")
-			;
+				.html("&times;");
 		} else{
 			$("#sideMenu").css("width", "0px");
 			$("#sideMenuButton")
 				.css({"transform": "translateX(0px)", "fontSize": "32px"})
-				.html("&#9776;")
-			;
+				.html("&#9776;");
 		}
 	});
 	
@@ -34,6 +33,11 @@ $(document).ready(function(){
 			$("#bottomMenuButton").css("display", "none");
 			$("#bottomMenu").css("display", "none");
 			$("#pageIndicator").css("bottom", "40px");
+			
+			if(hasTextArea){
+				hasTextArea = false;
+				$("#signature").remove();
+			}
 		} else{
 			bottomMenuToggled = false;
 			$("#bottomMenuButton").trigger("click");
@@ -57,6 +61,31 @@ $(document).ready(function(){
 			$("#pageIndicator").css("bottom", "44px");
 			$("#bottomMenuButton").css("bottom", "-20px");
 			$("#bottomMenu").css("bottom", "-66px");
+		}
+	});
+	
+	
+	/* Creates a text area at the cursor when in signing mode. */
+	$(".page").click(function(event){
+		if(isSigning && !hasTextArea){
+			hasTextArea = true;
+			
+			var elemId = "#" + $(this).attr("id");
+			
+			$(elemId).append("<div id=\"signature\" contenteditable=\"true\">Sign here...</div>");
+			
+			var windowPos = $(elemId).position();
+			var x = `${event.clientX - windowPos.left}px`;
+			var y = `${event.clientY - windowPos.top}px`;
+			
+			$("#signature")
+				.css({"position": "absolute", "top": y, "left": x, "width": "200px", "height": "100px", "text-align": "left", "background-color": "lightgray"})
+				.draggable({
+					"containment": "parent"
+				})
+				.resizable({
+					"containment": "parent"
+				});
 		}
 	});
 });
