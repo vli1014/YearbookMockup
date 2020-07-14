@@ -4,7 +4,10 @@ $(document).ready(function(){
 	isSigning = false;
 	bottomMenuToggled = false;
 	hasTextArea = false;
-
+	isBold = false;
+	inItalics = false;
+	isUnderlined = false;
+	
 	
 	/* Toggles the side menu. */
 	$("#sideMenuButton").click(function(){
@@ -79,13 +82,58 @@ $(document).ready(function(){
 			var y = `${event.clientY - windowPos.top}px`;
 			
 			$("#signature")
-				.css({"position": "absolute", "top": y, "left": x, "width": "200px", "height": "100px", "text-align": "left", "background-color": "lightgray"})
+				.css({"position": "absolute", "top": y, "left": x, "width": "200px", "height": "100px", "text-align": "left", "background-color": "lightgray", "overflow": "hidden"})
 				.draggable({
 					"containment": "parent"
 				})
 				.resizable({
 					"containment": "parent"
 				});
+		}
+	});
+	
+	
+	/* Font styles. */
+	$("#bold").click(function(){
+		if(hasTextArea){
+			isBold = !isBold;
+			
+			$("#signature").css("font-weight", (isBold ? "bold" : "normal"));
+		}
+	});
+	
+	$("#italics").click(function(){
+		if(hasTextArea){
+			inItalics = !inItalics;
+			
+			$("#signature").css("font-style", (inItalics ? "italic" : "normal"));
+		}
+	});
+	
+	$("#underline").click(function(){
+		if(hasTextArea){
+			isUnderlined = !isUnderlined;
+			
+			$("#signature").css("text-decoration", (isUnderlined ? "underline" : "none"));
+		}
+	});
+	
+	// TODO: Alignment
+	
+	$("#fontstyle").change(function(){
+		if(hasTextArea){
+			var font = $(this).children("option:selected").val();
+			
+			if(font != "Select Font...")
+				$("#signature").css("font-family", font);
+		}
+	});
+	
+	$("#fontsize").change(function(){
+		if(hasTextArea){
+			var size = $(this).children("option:selected").val();
+			
+			$("#signature").css("font-size", `${size}px`);
 		}
 	});
 });
